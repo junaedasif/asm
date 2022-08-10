@@ -1,0 +1,42 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+.CODE
+MAIN PROC
+	MOV CX, 19
+	MOV AX, 100
+	MOV BX, 95
+	
+	
+	;MOV AH, 2
+	;MOV DL, 1
+	
+	;CMP DL, 195
+	;JE LOOP_
+	
+	
+	LOOP_:
+	ADD AX,BX
+	SUB BX,5 
+	;CMP AX,195
+	;JE EXIT_ 
+	LOOP LOOP_
+	
+	
+	
+	
+	
+
+
+EXIT_:
+
+INT 21H
+MOV AH, 4CH
+INT 21H
+
+;DISPLAY:
+
+;INT 21H
+
+MAIN ENDP
+END MAIN
